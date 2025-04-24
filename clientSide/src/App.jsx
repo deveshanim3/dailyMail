@@ -7,6 +7,7 @@ import Layout from './components/Layout'
 import About from './components/About'
 
 function App() {
+
 const [news,setNews]=useState([])
 const getData = async () => {
   const response = await fetch("https://newsapi.org/v2/everything?q=keyword&apiKey=aeb3a8116b764f2d9c38582452473b46")
@@ -16,6 +17,7 @@ const getData = async () => {
 useEffect(()=>{
   getData() ;
 },[])
+
 const getSearch=async(keyword)=>{
   try {
     const data=await fetch(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=aeb3a8116b764f2d9c38582452473b46`)
